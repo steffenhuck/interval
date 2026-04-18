@@ -27,7 +27,7 @@ body {
 .page {
   width: min(var(--width), calc(100vw - 3rem));
   margin: 0 auto;
-  padding: 4.8rem 0 4.3rem;
+  padding: 4.8rem 0 4.4rem;
 }
 
 /* TITLE */
@@ -39,7 +39,7 @@ body {
 
 .title-block h1 {
   margin: 0;
-  font-size: 2.05rem;
+  font-size: 2.1rem;
   line-height: 1.05;
   font-weight: 700;
 }
@@ -55,7 +55,31 @@ body {
   text-align: center;
   font-size: 1.55rem;
   margin: 2rem 0 2.2rem;
-  letter-spacing: 0.02em;
+}
+
+/* Proper constructed struck arrow */
+
+.forbidden-arrow {
+  position: relative;
+  display: inline-block;
+  width: 1.45em;
+  text-align: center;
+}
+
+.forbidden-arrow::before {
+  content: "→";
+}
+
+.forbidden-arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.2em;
+  height: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transform-origin: center;
 }
 
 /* CAST */
@@ -94,11 +118,11 @@ body {
   margin-top: 0.1rem;
 }
 
-/* FINAL GAP — reduced, less “shouting” */
+/* FINAL GAP — toned down */
 
 .gap {
   display: inline-block;
-  width: 1.4em;
+  width: 1.35em;
 }
 
 /* SIGNATURE */
@@ -127,7 +151,7 @@ body {
   </header>
 
   <div class="equation">
-    A ↛ B
+    A <span class="forbidden-arrow"></span> B
   </div>
 
   <section class="cast">
